@@ -1431,7 +1431,7 @@ img {
 
     margin-bottom: 20px;
 
-    color: #8a8a94;
+    color: #6f96ff;
 
     font-size: 12px;
     font-weight: 600;
@@ -1456,13 +1456,14 @@ img {
 
 .work-heading h2 span {
     display: block;
-    color: #777780;
+    color: #6f96ff;
 }
+
 
 .work-intro {
     margin: 0;
 
-    color: #85858f;
+    color: #a0a0aa;
 
     font-size: 17px;
     line-height: 1.55;
@@ -1985,116 +1986,6 @@ img {
 
 
 /* =========================================================
-   PROCESS
-========================================================= */
-
-.process-section {
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(139, 92, 246, 0.04),
-      transparent 35%
-    ),
-    var(--bg);
-}
-
-.process-list {
-  max-width: 920px;
-
-  margin: 0 auto;
-}
-
-.process-step {
-  display: grid;
-
-  grid-template-columns: 120px 1fr;
-
-  gap: 35px;
-
-  padding: 45px 0;
-
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.07);
-}
-
-.process-step:first-child {
-  border-top:
-    1px solid rgba(255, 255, 255, 0.07);
-}
-
-.process-number {
-  color: #4f4f57;
-
-  font-size: 12px;
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-}
-
-.process-content h3 {
-  font-size: 28px;
-
-  letter-spacing: -0.03em;
-}
-
-.process-content p {
-  max-width: 700px;
-
-  margin-top: 12px;
-
-  color: var(--text-muted);
-
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.process-closing {
-  max-width: 760px;
-
-  margin: 80px auto 0;
-
-  padding: 38px;
-
-  border:
-    1px solid rgba(85, 141, 255, 0.13);
-
-  border-radius: var(--radius-lg);
-
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(85, 141, 255, 0.08),
-      transparent 55%
-    ),
-    var(--surface);
-
-  text-align: center;
-}
-
-.process-closing span {
-  color: #7389b7;
-
-  font-size: 9px;
-  font-weight: 600;
-
-  letter-spacing: 0.16em;
-}
-
-.process-closing p {
-  margin-top: 17px;
-
-  color: #aaaab3;
-
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.process-closing strong {
-  color: #fff;
-}
-
-
-/* =========================================================
    WHY ASTRA
 ========================================================= */
 
@@ -2124,26 +2015,27 @@ img {
 }
 
 .why-card:hover {
-  transform: translateY(-5px);
-
-  border-color: var(--border-hover);
+    transform: translateY(-5px);
+    border-color: rgba(111, 150, 255, 0.32);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
 }
 
 .why-number {
-  display: block;
+    display: block;
 
-  color: #4d4d55;
+    color: #6f96ff;
 
-  font-size: 10px;
-  font-weight: 600;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1;
 
-  letter-spacing: 0.1em;
+    letter-spacing: -0.04em;
 }
 
 .why-card h3 {
   max-width: 260px;
 
-  margin-top: 75px;
+  margin-top: 35px;
 
   font-size: 25px;
 
@@ -2159,6 +2051,82 @@ img {
 
   font-size: 13px;
   line-height: 1.65;
+}
+
+/* =====================================================
+   WHY ASTRA — ASTRA STYLE
+===================================================== */
+
+.why-section .section-label {
+    color: #6f96ff;
+}
+
+.why-section .section-heading h2 {
+    color: #f5f5f7;
+}
+
+.why-section .section-heading h2 span {
+    color: #6f96ff;
+}
+
+.why-section .section-heading h2 span {
+    display: inline;
+}
+
+/* =====================================================
+   WHY ASTRA — CARD FOOTER
+===================================================== */
+
+.why-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 28px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.why-card-tag {
+    color: #6f96ff;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+}
+
+.why-card-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(111, 150, 255, 0.35);
+    border-radius: 50%;
+
+    color: #6f96ff;
+
+    background: rgba(111, 150, 255, 0.04);
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.why-card-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.why-card:hover .why-card-icon {
+    border-color: rgba(111, 150, 255, 0.7);
+    background: rgba(111, 150, 255, 0.08);
+    transform: translateY(-2px);
 }
 
 
@@ -2184,6 +2152,10 @@ img {
 .faq-list {
   border-top:
     1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-section .section-heading h2 span {
+    color: #6f96ff;
 }
 
 .faq-item {
@@ -2239,45 +2211,133 @@ img {
   line-height: 1.7;
 }
 
+.faq-section .section-label {
+    color: #6f96ff;
+}
+
+/* =====================================================
+   FAQ — SMOOTH ACCORDION
+===================================================== */
+
+.faq-item {
+    overflow: hidden;
+}
+
+.faq-item p {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+
+    transition:
+        max-height 0.45s ease,
+        opacity 0.3s ease,
+        margin-top 0.45s ease;
+}
+
+.faq-item[open] p {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 0px;
+}
+
+.faq-item summary span {
+    display: inline-block;
+    transition: transform 0.35s ease;
+}
+
+.faq-item[open] summary span {
+    transform: rotate(45deg);
+}
+
+/* =====================================================
+   FAQ — ACTIVE STATE
+===================================================== */
+
+.faq-item summary {
+    color: #f5f5f7;
+    transition: color 0.3s ease;
+}
+
+.faq-item[open] summary {
+    color: #6f96ff;
+}
+
+.faq-item summary span {
+    color: #777780;
+    transition:
+        color 0.3s ease,
+        transform 0.35s ease;
+}
+
+.faq-item[open] summary span {
+    color: #6f96ff;
+    transform: rotate(45deg);
+}
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
 .contact-section {
+  position: relative;
+
+  padding-top: 100px;
   padding-bottom: 140px;
+
+  background:
+    radial-gradient(
+      ellipse 75% 55% at 30% 0%,
+      rgba(42, 65, 135, 0.42),
+      rgba(20, 28, 55, 0.20) 38%,
+      transparent 72%
+    ),
+    #050608;
+
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: -180px;
+  left: 8%;
+
+  width: 850px;
+  height: 500px;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(71, 101, 190, 0.22),
+      transparent 68%
+    );
+
+  pointer-events: none;
+
+  filter: blur(20px);
 }
 
 .contact-wrapper {
   display: grid;
 
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 0.95fr 1.05fr;
 
-  gap: 80px;
+  gap: 70px;
 
-  padding: 70px;
+  padding: 50px 70px;
 
-  overflow: hidden;
+  overflow: visible;
 
-  border:
-    1px solid rgba(85, 141, 255, 0.13);
+  border: 0;
 
-  border-radius: var(--radius-xl);
+  border-radius: 0;
 
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(85, 141, 255, 0.09),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 90% 80%,
-      rgba(139, 92, 246, 0.07),
-      transparent 35%
-    ),
-    var(--surface);
+  background: transparent;
 }
-
 .contact-intro h2 {
   margin-top: 18px;
 
@@ -2307,9 +2367,33 @@ img {
 
 .contact-form {
   display: flex;
+
   flex-direction: column;
 
-  gap: 18px;
+  gap: 22px;
+
+  padding: 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+
+  background: rgba(18, 18, 21, 0.72);
+
+  box-shadow:
+    inset 0 0 40px rgba(255, 255, 255, 0.015);
+}
+
+.form-field label {
+  color: #a6a6b0;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
 }
 
 .form-row {
@@ -2340,21 +2424,21 @@ img {
 .form-field textarea {
   width: 100%;
 
-  padding: 14px 15px;
+  padding: 15px 16px;
 
-  border:
-    1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-  border-radius: 12px;
+  border-radius: 10px;
 
-  background: #08080a;
+  background: #0b0c10;
 
-  color: #fff;
+  color: #f5f5f7;
 
   font-size: 13px;
 
   transition:
     border-color 0.3s ease,
+    background 0.3s ease,
     box-shadow 0.3s ease;
 }
 
@@ -2375,18 +2459,60 @@ img {
 
 .form-field input:focus,
 .form-field textarea:focus {
-  border-color: rgba(85, 141, 255, 0.6);
+  border-color: rgba(111, 150, 255, 0.65);
+
+  background: #0d0f14;
 
   box-shadow:
-    0 0 0 3px rgba(85, 141, 255, 0.07);
+    0 0 0 3px rgba(111, 150, 255, 0.06);
 }
 
 .form-submit {
   width: 100%;
 
-  margin-top: 3px;
+  height: 58px;
+
+  margin-top: 2px;
 
   border: 0;
+
+  border-radius: 30px;
+
+  background: #6f96ff;
+
+  color: #08090d;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.form-submit:hover {
+  background: #82a4ff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(111, 150, 255, 0.18);
+}
+
+.form-submit span {
+  margin-left: 8px;
+
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
+}
+
+.form-submit:hover span {
+  transform: translateX(4px);
 }
 
 .form-note {
@@ -2397,13 +2523,74 @@ img {
   text-align: center;
 }
 
+/* =====================================================
+   CONTACT DETAILS ICONS
+===================================================== */
+
+.contact-detail svg {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+
+    color: #6f96ff;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: #a6a6b0;
+
+    font-size: 14px;
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.contact-detail svg {
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+
+    color: #6f96ff;
+}
+
+.contact-detail:hover {
+    color: #f5f5f7;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+/* =====================================================
+   CONTACT — ASTRA ACCENT
+===================================================== */
+
+.contact-section .section-label {
+    color: #6f96ff;
+}
+
+.contact-intro h2 span {
+    color: #6f96ff;
+}
+
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .site-footer {
-  padding: 70px 0 25px;
+  padding: 55px 0 25px;
 
   border-top:
     1px solid rgba(255, 255, 255, 0.07);
@@ -2418,7 +2605,7 @@ img {
 
   gap: 60px;
 
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
 .footer-brand p {
@@ -2444,7 +2631,7 @@ img {
 .footer-column > span {
   margin-bottom: 7px;
 
-  color: #5c5c64;
+  color: #6f96ff;
 
   font-size: 9px;
   font-weight: 600;
@@ -2453,7 +2640,7 @@ img {
 }
 
 .footer-column a {
-  color: #8b8b94;
+  color: #9696a0;
 
   font-size: 11px;
 
@@ -2477,6 +2664,16 @@ img {
   color: #55555d;
 
   font-size: 9px;
+}
+
+.footer-bottom a {
+    color: #55555d;
+    font-size: 9px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #6f96ff;
 }
 
 
@@ -2958,29 +3155,69 @@ img {
   }
 
 
-  /* FOOTER */
+  /* =====================================================
+   FOOTER — MOBILE
+  ===================================================== */
+
+@media (max-width: 768px) {
 
   .site-footer {
-    padding-top: 55px;
+    padding: 50px 0 22px;
   }
 
   .footer-top {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 40px 25px;
+    gap: 45px 30px;
 
-    padding-bottom: 45px;
+    padding-bottom: 40px;
   }
 
   .footer-brand {
     grid-column: 1 / -1;
   }
 
-  .footer-bottom {
-    flex-direction: column;
+  .footer-brand p {
+    max-width: 290px;
 
-    gap: 8px;
+    margin-top: 16px;
+
+    font-size: 12px;
   }
+
+  .footer-column {
+    gap: 12px;
+  }
+
+  .footer-column > span {
+    margin-bottom: 6px;
+
+    font-size: 9px;
+  }
+
+  .footer-column a {
+    font-size: 11px;
+  }
+
+  /* CONNECT takes the full width */
+
+  .footer-column:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-top: 20px;
+
+    font-size: 9px;
+  }
+
+}
 
 }
 
@@ -3575,4 +3812,634 @@ button:disabled {
     font-size: 14px;
   }
 
+}
+
+/* =====================================================
+   ASTRA DIGITAL — PROCESS
+   CLEAN VERSION
+===================================================== */
+
+.process-section {
+    width: 100%;
+    padding: 120px 0 110px;
+    background: #050505;
+    color: #f5f5f7;
+    overflow: hidden;
+}
+
+.process-container {
+    width: min(1280px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   PROCESS HEADER
+===================================================== */
+
+.process-header {
+    text-align: center;
+    margin: 0 auto 70px;
+}
+
+.process-eyebrow {
+    display: block;
+    margin-bottom: 18px;
+
+    color: #6f96ff;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.process-header h2 {
+    margin: 0;
+
+    color: #f5f5f7;
+
+    font-size: clamp(52px, 6vw, 82px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+    font-weight: 650;
+}
+
+.process-header h2 span {
+    color: #6f96ff;
+}
+
+.process-header p {
+    max-width: 620px;
+    margin: 24px auto 0;
+
+    color: #85858f;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PROCESS STEPS
+===================================================== */
+
+.process-steps {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+/* vertical connecting line */
+
+.process-steps::before {
+    content: "";
+
+    position: absolute;
+
+    left: 46px;
+    top: 45px;
+    bottom: 45px;
+
+    width: 1px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(111,150,255,0.7),
+        rgba(111,150,255,0.12)
+    );
+}
+
+
+/* =====================================================
+   PROCESS STEP
+===================================================== */
+
+.process-step {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 22px;
+
+    min-height: 190px;
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.process-number {
+    position: relative;
+    z-index: 2;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    border: 1px solid rgba(111,150,255,0.65);
+    border-radius: 50%;
+
+    background: #050505;
+
+    color: #6f96ff;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PROCESS CARD
+===================================================== */
+
+.process-card {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 38px;
+
+    min-height: 190px;
+
+    padding: 28px;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(111,150,255,0.045),
+            transparent 32%
+        ),
+        #090909;
+
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 28px;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(111,150,255,0.38);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35),
+        0 0 40px rgba(79,120,255,0.05);
+}
+
+
+/* =====================================================
+   PROCESS ICON
+===================================================== */
+
+.process-icon {
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.process-icon span {
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #6f96ff;
+    border-radius: 50%;
+
+    color: #6f96ff;
+
+    box-shadow:
+        0 0 30px rgba(111,150,255,0.12);
+}
+
+.process-icon span svg {
+    width: 34px;
+    height: 34px;
+
+    stroke-width: 1.7;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.process-content {
+    min-width: 0;
+}
+
+.process-content h3 {
+    margin: 0 0 14px;
+
+    color: #f5f5f7;
+
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.05;
+
+    letter-spacing: -1.8px;
+
+    font-weight: 650;
+}
+
+.process-content h3 span {
+    color: #6f96ff;
+}
+
+.process-content p {
+    max-width: 760px;
+
+    margin: 0;
+
+    color: #85858f;
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/* =====================================================
+   REMOVE ARROWS
+===================================================== */
+
+.process-arrow {
+    display: none !important;
+}
+
+
+/* =====================================================
+   ASTRA DIFFERENCE
+===================================================== */
+
+.astra-difference {
+    display: grid;
+    grid-template-columns: 90px minmax(280px, 1fr) 1px minmax(280px, 0.8fr);
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 70px;
+    padding: 45px 40px;
+
+    border: 1px solid rgba(111,150,255,0.22);
+    border-radius: 26px;
+
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(111,150,255,0.07),
+            transparent 30%
+        ),
+        #080808;
+}
+
+.difference-mark {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(111,150,255,0.55);
+    border-radius: 50%;
+
+    color: #6f96ff;
+
+    font-size: 25px;
+}
+
+.difference-eyebrow {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #6f96ff;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+.difference-main h3 {
+    margin: 0;
+
+    color: #f5f5f7;
+
+    font-size: clamp(24px, 2.5vw, 34px);
+    line-height: 1.15;
+
+    letter-spacing: -1.5px;
+}
+
+.difference-main h3 span {
+    color: #6f96ff;
+}
+
+.difference-divider {
+    width: 1px;
+    height: 70px;
+
+    background: rgba(255,255,255,0.12);
+}
+
+.astra-difference > p {
+    margin: 0;
+
+    color: #85858f;
+
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.astra-difference > p strong {
+    color: #f5f5f7;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .process-section {
+        padding: 100px 0 80px;
+    }
+
+    .process-container {
+        width: calc(100% - 50px);
+    }
+
+    .process-card {
+        grid-template-columns: 120px minmax(0, 1fr);
+        gap: 28px;
+
+        padding: 24px;
+    }
+
+    .process-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .process-icon span {
+        width: 58px;
+        height: 58px;
+        font-size: 25px;
+    }
+
+    .astra-difference {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .difference-divider {
+        display: none;
+    }
+
+    .astra-difference > p {
+        grid-column: 2;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .process-section {
+        padding: 80px 0 60px;
+    }
+
+    .process-container {
+        width: calc(100% - 32px);
+    }
+
+
+    /* HEADER */
+
+    .process-header {
+        margin-bottom: 45px;
+    }
+
+    .process-eyebrow {
+        margin-bottom: 14px;
+
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .process-header h2 {
+        font-size: 48px;
+        letter-spacing: -2.8px;
+    }
+
+    .process-header p {
+        margin-top: 18px;
+
+        font-size: 15px;
+    }
+
+
+    /* STEPS */
+
+    .process-steps {
+        gap: 18px;
+    }
+
+    .process-steps::before {
+        left: 31px;
+        top: 31px;
+        bottom: 31px;
+    }
+
+    .process-step {
+        grid-template-columns: 62px minmax(0, 1fr);
+
+        gap: 12px;
+
+        min-height: auto;
+
+        align-items: start;
+    }
+
+
+    /* NUMBER */
+
+    .process-number {
+        width: 62px;
+        height: 62px;
+
+        margin: 0;
+
+        font-size: 13px;
+    }
+
+
+    /* CARD */
+
+    .process-card {
+        display: block;
+
+        min-height: auto;
+
+        padding: 18px;
+
+        border-radius: 20px;
+    }
+
+
+    /* ICON */
+
+    .process-icon {
+        width: 100%;
+        height: 110px;
+
+        margin-bottom: 20px;
+
+        border-radius: 16px;
+    }
+
+    .process-icon span {
+        width: 54px;
+        height: 54px;
+
+        font-size: 23px;
+    }
+
+
+    /* CONTENT */
+
+    .process-content h3 {
+        margin-bottom: 10px;
+
+        font-size: 25px;
+        line-height: 1.1;
+
+        letter-spacing: -1px;
+    }
+
+    .process-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* DIFFERENCE */
+
+    .astra-difference {
+        display: block;
+
+        margin-top: 45px;
+        padding: 28px 22px;
+
+        border-radius: 20px;
+    }
+
+    .difference-mark {
+        margin-bottom: 22px;
+    }
+
+    .difference-main h3 {
+        font-size: 26px;
+    }
+
+    .astra-difference > p {
+        margin-top: 22px;
+
+        font-size: 14px;
+    }
+}
+/* =====================================================
+   PROCESS — FINAL SPACING POLISH
+===================================================== */
+
+.process-section {
+    padding-top: 150px;
+}
+
+.process-steps {
+    gap: 22px;
+}
+
+.process-card {
+    min-height: 180px;
+    padding: 26px 28px;
+}
+
+.process-icon {
+    width: 140px;
+    height: 140px;
+}
+
+.process-content h3 {
+    font-size: clamp(28px, 3vw, 38px);
+}
+
+.process-content p {
+    max-width: 850px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .process-section {
+        padding-top: 100px;
+    }
+
+    .process-card {
+        min-height: auto;
+        padding: 22px;
+    }
+
+    .process-icon {
+        width: 110px;
+        height: 110px;
+    }
+
+    .process-content h3 {
+        font-size: 30px;
+    }
+
+    .process-content p {
+        font-size: 15px;
+        line-height: 1.55;
+    }
 }
