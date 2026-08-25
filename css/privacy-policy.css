@@ -420,3 +420,44 @@
     }
 
 }
+
+.arrow-diagonal {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #6f96ff;
+    transition: transform 0.3s ease;
+}
+
+.arrow-diagonal::before {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    top: 2px;
+    right: 2px;
+
+    border-top: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+}
+
+.arrow-diagonal::after {
+    content: "";
+
+    position: absolute;
+
+    width: 16px;
+    height: 1.5px;
+
+    top: 10px;
+    left: 1px;
+
+    background: currentColor;
+
+    transform: rotate(-45deg);
+}
