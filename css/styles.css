@@ -109,7 +109,7 @@ img {
 
 .section {
   position: relative;
-  padding: 0px 0;
+  padding: 80px 0;
   background: var(--bg);
 }
 
@@ -335,17 +335,36 @@ img {
 }
 
 .mobile-menu-toggle span {
-  width: 17px;
-  height: 1.5px;
+    display: block;
 
-  border-radius: 10px;
+    width: 18px;
+    height: 2px;
 
-  background: #fff;
+    border-radius: 10px;
+
+    background: #fff;
+
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-4px) rotate(-45deg);
 }
 
 .mobile-menu {
   display: none;
 }
+
 
 
 /* =========================================================
@@ -1394,6 +1413,74 @@ img {
 
 }
 
+/* =====================================================
+   SERVICES — DESKTOP CARD LAYOUT
+===================================================== */
+
+.service-card {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    column-gap: 20px;
+}
+
+
+/* NUMBER */
+
+.service-icon {
+    grid-column: 1;
+    grid-row: 1;
+
+    margin: 0;
+}
+
+
+/* CATEGORY + HEADING */
+
+.service-content {
+    grid-column: 2;
+    grid-row: 1;
+
+    min-width: 0;
+}
+
+
+/* CATEGORY */
+
+.service-category {
+    margin: 0 0 12px;
+}
+
+
+/* HEADING */
+
+.service-card h3 {
+    margin: 0;
+}
+
+
+/* PARAGRAPH — FULL WIDTH */
+
+.service-card > p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    margin: 25px 0 0;
+}
+
+.service-card h3 {
+    margin: 0;
+    min-height: 60px;
+}
+
+/* LEARN MORE — FULL WIDTH */
+
+.service-card > .service-link {
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    margin-top: 0px;
+}
+
 
 /* =====================================================
    SELECTED WORK
@@ -2284,8 +2371,8 @@ img {
 .contact-section {
   position: relative;
 
-  padding-top: 100px;
-  padding-bottom: 140px;
+  padding-top: 50px;
+  padding-bottom: 60px;
 
   background:
     radial-gradient(
@@ -2412,14 +2499,6 @@ img {
   gap: 8px;
 }
 
-.form-field label {
-  color: #8d8d96;
-
-  font-size: 10px;
-  font-weight: 500;
-
-  letter-spacing: 0.04em;
-}
 
 .form-field input,
 .form-field textarea {
@@ -2583,6 +2662,137 @@ img {
 
 .contact-intro h2 span {
     color: #6f96ff;
+}
+
+/* ================================
+   PHONE INPUT
+================================ */
+
+.phone-input {
+    display: grid;
+
+    grid-template-columns: 80px minmax(0, 1fr);
+
+    width: 100%;
+    height: 48px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background: #0b0c10;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* COUNTRY CODE */
+
+.phone-input select {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 28px 0 10px;
+
+    border: 0;
+    border-right: 1px solid rgba(255,255,255,0.08);
+
+    outline: none;
+
+    background: transparent;
+
+    color: #f5f5f7;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.phone-input {
+    position: relative;
+}
+
+.phone-input::after {
+    content: "⌄";
+
+    position: absolute;
+
+    left: 55px;
+    top: 40%;
+
+    transform: translateY(-55%);
+
+    color: #f5f5f7;
+
+    font-size: 18px;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* PHONE NUMBER */
+
+.phone-input input {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding: 0 16px;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    outline: none;
+
+    background: transparent !important;
+
+    color: #f5f5f7;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    box-shadow: none !important;
+}
+
+
+/* PLACEHOLDER */
+
+.phone-input input::placeholder {
+    color: #55555e;
+}
+
+
+/* FOCUS */
+
+.phone-input:focus-within {
+    border-color: rgba(111, 150, 255, 0.65);
+
+    background: #0d0f14;
+
+    box-shadow:
+        0 0 0 3px rgba(111, 150, 255, 0.06);
+}
+
+
+/* DROPDOWN */
+
+.phone-input select option {
+    background: #111216;
+    color: #ffffff;
 }
 
 
@@ -2755,24 +2965,47 @@ img {
 
   .mobile-menu-toggle {
     display: flex;
+    transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
   }
 
   .mobile-menu {
-    display: none;
-
+    display: flex;
     flex-direction: column;
 
-    padding: 20px;
+    max-height: 0;
+    opacity: 0;
 
-    border-top:
-      1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+
+    padding: 0 20px;
 
     background: rgba(5, 5, 5, 0.98);
-  }
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 
-  .mobile-menu.active {
-    display: flex;
-  }
+    transform: translateY(-10px);
+
+    pointer-events: none;
+
+    transition:
+        max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease,
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        padding 0.4s ease;
+}
+
+.mobile-menu.active {
+    max-height: 520px;
+
+    opacity: 1;
+
+    padding: 10px 20px 20px;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
 
   .mobile-menu a {
     padding: 14px 0;
@@ -3010,30 +3243,103 @@ img {
   }
 
 
-  /* SERVICES */
+/* =====================================================
+   SERVICES — MOBILE
+===================================================== */
 
-  .services-grid {
+.services-grid {
     grid-template-columns: 1fr;
-  }
+}
 
-  .service-card {
+.service-card {
     min-height: auto;
 
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    column-gap: 18px;
+
     padding: 25px;
-  }
+}
 
-  .service-icon {
-    margin-bottom: 45px;
-  }
 
-  .service-card h3 {
+/* ================================
+   NUMBER
+================================ */
+
+.service-icon {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 52px;
+    height: 52px;
+
+    margin: 0;
+
+    display: grid;
+    place-items: center;
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.service-content {
+    grid-column: 2;
+    grid-row: 1;
+
+    min-width: 0;
+}
+
+
+/* CATEGORY */
+
+.service-category {
+    margin: 0 0 8px;
+
+    font-size: 9px;
+}
+
+
+/* HEADING */
+
+.service-card h3 {
+    margin: 0;
+
     font-size: 29px;
-  }
+    line-height: 1.05;
+}
 
-  .service-card ul {
-    grid-template-columns: 1fr;
-  }
 
+/* ================================
+   PARAGRAPH
+================================ */
+
+/*
+   Pull paragraph out to full card width
+*/
+
+.service-card p {
+    grid-column: 1 / -1;
+
+    margin: 24px 0 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   LEARN MORE
+================================ */
+
+.service-card .service-link {
+    grid-column: 1 / -1;
+
+    display: inline-flex;
+
+    margin-top: 24px;
+}
 
   /* WORK */
 
@@ -3097,23 +3403,79 @@ img {
   }
 
 
-  /* WHY */
+ /* WHY */
 
-  .why-grid {
+.why-grid {
     grid-template-columns: 1fr;
-  }
+}
 
-  .why-card {
-    min-height: 250px;
+.why-card {
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr);
+    column-gap: 15px;
 
-    padding: 25px;
-  }
+    padding: 38px 24px 30px;
+}
 
-  .why-card h3 {
-    margin-top: 55px;
 
-    font-size: 24px;
-  }
+/* NUMBER */
+
+.why-card-number {
+    grid-column: 1;
+    grid-row: 1;
+
+    margin: 0;
+}
+
+
+/* HEADING */
+
+.why-card h3 {
+    grid-column: 2;
+    grid-row: 1;
+
+    margin: 0;
+
+    font-size: 30px;
+    line-height: 1.05;
+}
+
+
+/* PARAGRAPH */
+
+.why-card p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    margin: 32px 0 0;
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* BOTTOM ROW */
+
+.why-card-footer {
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-top: 32px;
+}
+
+.why-card-footer span {
+    display: block;
+    max-width: none;
+}
+
+.why-card-footer a {
+    flex-shrink: 0;
+}
 
 
   /* FAQ */
@@ -3154,6 +3516,39 @@ img {
   .form-row {
     grid-template-columns: 1fr;
   }
+
+  /* ================================
+   CONTACT CTA — MOBILE
+================================ */
+
+.contact-form button,
+.contact-submit {
+    width: 100%;
+    min-height: 64px;
+
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* Arrow */
+
+.contact-form button::after,
+.contact-submit::after {
+    margin-left: 20px;
+    font-size: 22px;
+}
 
 
   /* =====================================================
@@ -3971,13 +4366,13 @@ button:disabled {
     position: relative;
 
     display: grid;
-    grid-template-columns: 150px minmax(0, 1fr);
+    grid-template-columns: 120px minmax(0, 1fr);
 
     align-items: center;
 
-    gap: 38px;
+    gap: 20px;
 
-    min-height: 190px;
+    min-height: 60px;
 
     padding: 28px;
 
@@ -4108,7 +4503,7 @@ button:disabled {
     gap: 35px;
 
     margin-top: 70px;
-    padding: 45px 40px;
+    padding: 35px 40px;
 
     border: 1px solid rgba(111,150,255,0.22);
     border-radius: 26px;
@@ -4393,17 +4788,22 @@ button:disabled {
 }
 
 .process-steps {
-    gap: 22px;
+    gap: 18px;
 }
 
 .process-card {
-    min-height: 180px;
-    padding: 26px 28px;
+    min-height: 150px;
+    padding: 20px 28px;
 }
 
 .process-icon {
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
+}
+
+.process-icon span {
+    width: 70px;
+    height: 70px;
 }
 
 .process-content h3 {
@@ -4416,31 +4816,294 @@ button:disabled {
 
 
 /* =====================================================
-   MOBILE
+   PROCESS — MOBILE REDESIGN
 ===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
 
     .process-section {
-        padding-top: 100px;
+        padding: 70px 0 60px;
     }
+
+    .process-container {
+        width: calc(100% - 32px);
+    }
+
+
+    /* ================================
+       HEADER
+    ================================= */
+
+    .process-header {
+        margin-bottom: 45px;
+        text-align: left;
+    }
+
+    .process-eyebrow {
+        margin-bottom: 14px;
+
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .process-header h2 {
+        font-size: 46px;
+        line-height: 0.98;
+        letter-spacing: -2.5px;
+    }
+
+    .process-header p {
+        max-width: 100%;
+
+        margin-top: 18px;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* ================================
+       PROCESS STEPS
+    ================================= */
+
+    .process-steps {
+        gap: 22px;
+    }
+
+    .process-steps::before {
+        left: 20px;
+
+        top: 24px;
+        bottom: 24px;
+
+        width: 1px;
+    }
+
+
+    /* ================================
+       STEP
+    ================================= */
+
+    .process-step {
+    position: relative;
+    display: block;
+    min-height: auto;
+}
+
+.process-steps::before {
+    left: 20px;
+
+    top: 20px;
+    bottom: 20px;
+
+    width: 1px;
+}
+
+
+    /* ================================
+       NUMBER
+    ================================= */
+
+    .process-number {
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+
+    transform: translateY(-50%);
+
+    z-index: 3;
+
+    border-color: rgba(111, 150, 255, 0.7);
+
+    font-size: 11px;
+
+    background: #050505;
+}
+
+
+    /* ================================
+       CARD
+    ================================= */
 
     .process-card {
-        min-height: auto;
-        padding: 22px;
-    }
+    display: grid;
+
+    grid-template-columns: 60px minmax(0, 1fr);
+
+    column-gap: 17px;
+
+    margin-left: 54px;
+
+    width: calc(100% - 54px);
+
+    min-height: auto;
+
+    padding: 40px 22px 30px;
+
+    border-radius: 20px;
+}
+
+
+    /* ================================
+       ICON
+    ================================= */
 
     .process-icon {
-        width: 110px;
-        height: 110px;
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0;
+}
+
+.process-icon span {
+    width: 60px;
+    height: 60px;
+
+    border-width: 1.5px;
+}
+
+.process-icon span svg {
+    width: 30px;
+    height: 30px;
+}
+
+
+    /* ================================
+       CONTENT
+    ================================= */
+
+    .process-content {
+    display: contents;
+}
+
+.process-content h3 {
+    grid-column: 2;
+    grid-row: 1;
+
+    align-self: center;
+
+    margin: 0;
+
+    font-size: 30px;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.3px;
+}
+
+.process-content p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    max-width: 100%;
+
+    margin: 0px 0 0;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+}
+
+ /* ================================
+       DIFFERENCE
+    ================================= */
+
+@media (max-width: 650px) {
+
+  .astra-difference {
+    display: grid;
+
+    grid-template-columns: 72px 1fr;
+    column-gap: 20px;
+
+    align-items: start;
+
+    padding: 40px 24px;
+
+    border-radius: 22px;
+  }
+
+
+  /* ICON */
+
+  .difference-mark {
+    width: 72px;
+    height: 72px;
+
+    margin: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+  }
+
+
+  /* CONTENT */
+
+  .difference-main {
+    min-width: 0;
+  }
+
+  .difference-main .eyebrow {
+    margin: 0 0 24px;
+  }
+
+  .difference-main h3 {
+    margin: 0;
+
+    font-size: 30px;
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+  }
+
+
+  /* DESCRIPTION */
+
+  .astra-difference > p {
+    grid-column: 1 / -1;
+
+    margin: 10px 0 0;
+
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+}
+
+/* =====================================================
+   MOBILE MENU — FINAL DISPLAY CONTROL
+===================================================== */
+
+/* DESKTOP */
+@media (min-width: 769px) {
+
+    .mobile-menu-toggle {
+        display: none !important;
     }
 
-    .process-content h3 {
-        font-size: 30px;
+    .mobile-menu {
+        display: none !important;
     }
 
-    .process-content p {
-        font-size: 15px;
-        line-height: 1.55;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .mobile-menu-toggle {
+        display: flex !important;
     }
+
 }
