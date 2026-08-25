@@ -7,11 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".mobile-menu");
 
     if (!mobileMenuToggle || !mobileMenu) {
-        console.log("MENU ELEMENTS NOT FOUND");
+        console.log("Mobile menu elements not found");
         return;
     }
-
-    console.log("ASTRA MENU JS LOADED");
 
     mobileMenuToggle.addEventListener("click", () => {
 
@@ -30,11 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
+    // Close menu when a link is clicked
+
     mobileMenu.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
             mobileMenu.classList.remove("active");
+
             mobileMenuToggle.classList.remove("active");
 
             mobileMenuToggle.setAttribute(
