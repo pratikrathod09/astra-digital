@@ -967,7 +967,7 @@ img {
 .platform-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 16px;
 }
@@ -3848,7 +3848,7 @@ button:disabled {
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(4, minmax(0, 1fr));
 
   gap: 28px;
 
@@ -5178,4 +5178,81 @@ button:disabled {
 
     transform: rotate(-45deg);
     transform-origin: center;
+}
+
+/* =====================================================
+   WHATSAPP FLOATING BUTTON — ASTRA STYLE
+===================================================== */
+
+.whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 9999;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(111, 150, 255, 0.35);
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #6f96ff 0%,
+        #7666f5 100%
+    );
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(111, 150, 255, 0.18);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 28px;
+    height: 28px;
+
+    display: block;
+
+    filter: brightness(0) invert(1);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.4),
+        0 0 32px rgba(111, 150, 255, 0.3);
+}
+
+
+/* =====================================================
+   WHATSAPP — MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .whatsapp-float {
+        right: 18px;
+        bottom: 18px;
+
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-float img {
+        width: 25px;
+        height: 25px;
+    }
+
 }
